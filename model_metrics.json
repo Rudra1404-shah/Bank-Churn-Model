@@ -1,0 +1,35 @@
+{
+  "model_name": "XGBoost with SMOTE + Class Weight",
+  "model_type": "Binary Classification",
+  "optimization_focus": "High Recall (Catch Maximum Churners)",
+  "accuracy": 0.75,
+  "precision": 0.45,
+  "recall": 0.78,
+  "f1_score": 0.57,
+  "roc_auc": 0.85,
+  "confusion_matrix": {
+    "true_negatives": 1770,
+    "false_positives": 595,
+    "false_negatives": 140,
+    "true_positives": 495
+  },
+  "class_distribution": {
+    "no_churn": 0.796,
+    "churn": 0.204
+  },
+  "hyperparameters": {
+    "algorithm": "XGBoost",
+    "scale_pos_weight": 8,
+    "learning_rate": 0.31,
+    "max_depth": 5,
+    "n_estimators": 50,
+    "imbalance_handling": "SMOTE + Class Weight"
+  },
+  "training_data": {
+    "total_samples": 10000,
+    "train_split": 0.8,
+    "test_split": 0.2,
+    "features": 10
+  },
+  "description": "Model optimized for high recall (78%) to identify maximum number of at-risk customers. Acceptable false positive rate (45% precision) because cost of retention offer << value of retained customer."
+}
